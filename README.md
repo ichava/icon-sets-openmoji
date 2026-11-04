@@ -45,7 +45,7 @@ php artisan ichava::ichava-core.database seed --package=ichava/icon-sets-openmoj
 
 The seed is not optional: until it runs the registry holds no rows for this pack and every lookup returns nothing. No configuration is needed; the defaults are merged without publishing anything.
 
-Coming from `ichava/icon-sets-emoji`: these sets moved here from it. With this pack installed, the old `ichava/icon-sets-emoji::openmoji-*` ids resolve here and are logged as deprecated; `php artisan ichava::ichava-core.info doctor` lists where you still use them.
+Coming from `ichava/icon-sets-emoji`: these sets moved here from it, and this is the pack to install for new work (preferred since 0.1.0). The emoji pack's copies stay supported in v0.1.0. With this pack installed, the old `ichava/icon-sets-emoji::openmoji-*` ids resolve here and are logged as deprecated; `php artisan ichava::ichava-core.info doctor` lists where you still use them.
 
 ### Usage
 

@@ -54,6 +54,20 @@ it(description: 'declares the move from icon-sets-emoji as contract section 8 gi
     ]]);
 });
 
+it(description: 'says 0.1.0 and prefers this pack, never a 0.2.0 that will not exist', closure: function () {
+    $root = dirname(__DIR__, 2);
+    $fixture = json_decode((string) file_get_contents(openmoji_fixture('EmojiPack') . '/config.json'), true, flags: JSON_THROW_ON_ERROR);
+
+    expect($fixture['metadata']['data']['categories']['openmoji-color']['deprecated'])->toBe(['since' => '0.1.0', 'replacement' => 'ichava/icon-sets-openmoji']);
+
+    foreach (['README.md', 'docs/sets.md', 'docs/getting-started.md', 'docs/architecture.md'] as $file) {
+        expect(str_contains((string) file_get_contents("{$root}/{$file}"), '0.2.0'))->toBeFalse("{$file} names a version that will not exist");
+    }
+
+    expect((string) file_get_contents("{$root}/docs/sets.md"))->toContain('preferred since 0.1.0')
+        ->and((string) file_get_contents("{$root}/README.md"))->toContain('preferred since 0.1.0');
+});
+
 it(description: 'resolves the old icon-sets-emoji ids here when both packs are installed', closure: function () {
     $registry = app(IconRegistry::class);
     $registry->fromDirectory(openmoji_fixture('EmojiPack'));

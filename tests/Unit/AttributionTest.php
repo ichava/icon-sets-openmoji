@@ -72,3 +72,17 @@ it(description: 'points the README licence section at ATTRIBUTION.md', closure: 
     $this->assertStringContainsString('(ATTRIBUTION.md)', $m[1]);
     $this->assertStringContainsString('claims no authorship', $m[1]);
 });
+
+it(description: 'ships both licence files and names both licences in the README', closure: function () {
+    $root = attribution_root();
+    expect(is_file($root . '/LICENSE'))->toBeTrue();
+    expect(is_file($root . '/resources/assets/svg/licenses/openmoji/LICENSE'))->toBeTrue();
+
+    $readme = (string) file_get_contents($root . '/README.md');
+    preg_match('/^## License\R(.*)\z/ms', $readme, $m);
+    $section = $m[1] ?? '';
+
+    $this->assertStringContainsString('MIT', $section, 'README License section must name MIT (the package code)');
+    $this->assertStringContainsString('CC-BY-SA 4.0', $section, 'README License section must name CC-BY-SA 4.0 (the artwork)');
+    $this->assertStringContainsString('resources/assets/svg/licenses/openmoji/LICENSE', $section);
+});

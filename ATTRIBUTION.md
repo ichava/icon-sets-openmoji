@@ -9,6 +9,10 @@ This package has two owners, and each part keeps its own licence.
 
 The MIT licence in `LICENSE` covers ONLY the package code. Each emoji asset retains its original licence. Simtabi LLC packages and redistributes the emoji; it did not draw them and claims no authorship of them.
 
+## The licence split
+
+The root `LICENSE` is **MIT** and covers the package code only. The OpenMoji artwork stays **CC-BY-SA 4.0**, with its text at `resources/assets/svg/licenses/openmoji/LICENSE`; the same split is used by `icon-sets-tabler` and `icon-sets-emoji`.
+
 ## OpenMoji Color + OpenMoji Black
 
 - **Set directories**:

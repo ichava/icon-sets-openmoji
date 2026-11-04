@@ -17,6 +17,10 @@ All notable changes to `ichava/icon-sets-openmoji` follow [Keep a Changelog](htt
 
 - **`sync-upstream.yml` is a caller of icon-sets-sync's reusable `sync-pack.yml`**, pinned to a full commit SHA (icon-sets-sync#79). It builds the toolkit from source at that commit instead of `docker build` from `main`, grants `GITHUB_TOKEN` only `contents: read` and `issues: write` (the `contents`, `pull-requests` and `statuses: write` grants are gone: the Refresh Bot token does the writes), and opens an issue on an upstream licence change. The in-job Pest run and commit status are dropped; the sync pull request now starts the normal CI. `tests/Unit/SyncWorkflowCallerTest.php` pins the pin, the triggers and the permissions, and `symfony/yaml` joins `require-dev` for it.
 
+### Security
+
+- **Every workflow declares a top-level `permissions: contents: read`** (S9), so its token no longer depends on the organisation's default. None of these jobs writes. `tests/Unit/WorkflowPermissionsTest.php` fails if a workflow loses the block.
+
 ## [0.1.0] - TBD
 
 First release of `ichava/icon-sets-openmoji` (owner decision D9, 2026-11-04).

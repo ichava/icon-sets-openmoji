@@ -62,9 +62,9 @@ An empty result means no consumed code moved.
 New icons arrive by an upstream sync, not by cutting a tag here.
 [`ichava/icon-sets-sync`](https://github.com/ichava/icon-sets-sync/blob/main/docs/upstream-tracking.md)
 is to poll OpenMoji's releases, refresh the vendored SVGs, bump `upstream.current_version` in
-`resources/assets/svg/config.json` and open a pull request. It has no recipe for this pack yet:
-its `emoji-sets` recipe still refreshes OpenMoji inside icon-sets-emoji, so until a recipe is split
-out the weekly sync here has nothing to run. That pull request is the change; a
+`resources/assets/svg/config.json` and open a pull request. Its `openmoji-sets` recipe
+(`config/icon-sets-openmoji.json`, added in ichava/icon-sets-sync#78) does this for this pack, and a
+licence change upstream stops the sync and opens an issue instead. That pull request is the change; a
 release follows it only if you want the new icons published under a tag.
 
 The weekly refresh is `.github/workflows/sync-upstream.yml`, a caller of the reusable

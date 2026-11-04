@@ -4,6 +4,10 @@ All notable changes to `ichava/icon-sets-openmoji` follow [Keep a Changelog](htt
 
 ## [Unreleased]
 
+### Documentation
+
+- **The licence split is stated in the README "License" section and in `ATTRIBUTION.md`** (Q17): the root `LICENSE` is MIT and covers the package code, and the OpenMoji artwork stays CC-BY-SA 4.0 at `resources/assets/svg/licenses/openmoji/LICENSE`. `AttributionTest` now asserts both licence files exist and the README names both licences.
+
 ## [0.1.0] - TBD
 
 First release of `ichava/icon-sets-openmoji` (owner decision D9, 2026-11-04).

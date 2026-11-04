@@ -93,6 +93,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). Report vulnerabilities privately through
 
 ## License
 
-The package code is MIT, © Simtabi LLC. See [LICENSE](LICENSE).
+Two licences apply, split by file. The package code is **MIT**, © Simtabi LLC, and the root [LICENSE](LICENSE) is that MIT text. The OpenMoji artwork is **CC-BY-SA 4.0**, and its licence text is `resources/assets/svg/licenses/openmoji/LICENSE`.
 
-The emoji are [OpenMoji](https://openmoji.org/), CC-BY-SA 4.0, and keep that licence; its text ships in `resources/assets/svg/licenses/openmoji/LICENSE`. Simtabi LLC claims no authorship of them. OpenMoji requires credit wherever the emoji are shown, and its share-alike term binds anything you derive from them; the credit line and terms are in [ATTRIBUTION.md](ATTRIBUTION.md), which ships with the package.
+The emoji keep that licence and Simtabi LLC claims no authorship of them. OpenMoji requires credit wherever the emoji are shown, and its share-alike term binds anything you derive from the artwork, not your application's code; the credit line and terms are in [ATTRIBUTION.md](ATTRIBUTION.md), which ships with the package.

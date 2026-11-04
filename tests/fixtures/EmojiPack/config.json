@@ -3,8 +3,8 @@
     "package": {
         "name": "ichava/icon-sets-emoji",
         "title": "Emoji Sets (fixture)",
-        "description": "Stands in for ichava/icon-sets-emoji 0.2.0: a twemoji set it keeps, and an openmoji-color set it has deprecated in favour of this pack.",
-        "version": "0.2.0",
+        "description": "Stands in for ichava/icon-sets-emoji 0.1.0: a twemoji set it keeps, and an openmoji-color set it has deprecated in favour of this pack.",
+        "version": "0.1.0",
         "type": "bulk",
         "license": "MIT",
         "kind": "icon"
@@ -14,7 +14,7 @@
             "variants": {},
             "categories": {
                 "twemoji": { "name": "Twemoji" },
-                "openmoji-color": { "name": "OpenMoji Color", "deprecated": { "since": "0.2.0", "remove_in": "1.0.0", "replacement": "ichava/icon-sets-openmoji" } }
+                "openmoji-color": { "name": "OpenMoji Color", "deprecated": { "since": "0.1.0", "replacement": "ichava/icon-sets-openmoji" } }
             }
         }
     },

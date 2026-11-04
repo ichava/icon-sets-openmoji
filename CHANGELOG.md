@@ -10,6 +10,7 @@ All notable changes to `ichava/icon-sets-openmoji` follow [Keep a Changelog](htt
 
 ### Documentation
 
+- **This pack is stated plainly as the one to install for new work** (preferred since 0.1.0), and icon-sets-emoji's copies of the OpenMoji sets as supported in v0.1.0, with no removal date. The older "deprecated since 0.2.0" wording is gone (0.2.0 will not exist). `tests/Feature/ReplacesEmojiTest.php` asserts the wording and both resolution paths.
 - **`docs/release.md` names the sync recipe that now exists** (`openmoji-sets`, icon-sets-sync#78) instead of saying the weekly sync has nothing to run.
 - **The licence split is stated in the README "License" section and in `ATTRIBUTION.md`** (Q17): the root `LICENSE` is MIT and covers the package code, and the OpenMoji artwork stays CC-BY-SA 4.0 at `resources/assets/svg/licenses/openmoji/LICENSE`. `AttributionTest` now asserts both licence files exist and the README names both licences.
 

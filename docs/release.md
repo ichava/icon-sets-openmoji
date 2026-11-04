@@ -67,6 +67,13 @@ its `emoji-sets` recipe still refreshes OpenMoji inside icon-sets-emoji, so unti
 out the weekly sync here has nothing to run. That pull request is the change; a
 release follows it only if you want the new icons published under a tag.
 
+The weekly refresh is `.github/workflows/sync-upstream.yml`, a caller of the reusable
+[`sync-pack.yml`](https://github.com/ichava/icon-sets-sync/blob/main/.github/workflows/sync-pack.yml)
+in icon-sets-sync, pinned to a commit. It builds the toolkit from source at that commit, opens the
+pull request with the Refresh Bot token so the pull request's own CI runs, and on an upstream
+licence change opens an issue instead of a pull request. Advance the pin (the `uses:` SHA and
+`toolkit-ref`, the same commit) to take a newer toolkit.
+
 Core's [check pack updates](https://github.com/ichava/core/blob/main/docs/recipes/check-pack-updates.md) reports whether a newer upstream
 release exists. **The vendored version lives in `config.json` and nowhere else** -- writing it into
 prose as well is how a README came to advertise a release the pack did not ship.

@@ -4,6 +4,10 @@ All notable changes to `ichava/icon-sets-openmoji` follow [Keep a Changelog](htt
 
 ## [Unreleased]
 
+### Fixed
+
+- **`openmoji-color/travel-places/high-speed-train.svg` no longer carries a stray `d` text node** between `<g id="color">` and its first path. The defect is upstream's (OpenMoji 15.1.0 `1F684.svg` has it); the fix removes only that line. It rendered nothing but made the icon generator refuse the file. `NoStrayTextNodesTest` fails on any SVG in the pack with text directly under `<svg>` or `<g>`, floored at 7,132 files.
+
 ### Documentation
 
 - **`docs/release.md` names the sync recipe that now exists** (`openmoji-sets`, icon-sets-sync#78) instead of saying the weekly sync has nothing to run.

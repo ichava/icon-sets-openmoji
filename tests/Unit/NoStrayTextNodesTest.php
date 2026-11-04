@@ -13,7 +13,7 @@ declare(strict_types=1);
  */
 function stray_text_nodes_in(string $file): array
 {
-    $dom = new DOMDocument();
+    $dom = new DOMDocument;
 
     if (@$dom->loadXML((string) file_get_contents($file), LIBXML_NONET) === false || $dom->documentElement === null) {
         return ['unparseable'];

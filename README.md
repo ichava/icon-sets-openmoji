@@ -5,7 +5,7 @@
 
 Two badges, not four: the pack is not on Packagist yet, so there is no registry version to show, and the artwork is CC-BY-SA 4.0 rather than MIT (the code is MIT; see [License](#license)).
 
-> OpenMoji for the Ichava Laravel icon ecosystem: 7,132 SVGs in two sets, OpenMoji colour and OpenMoji black.
+> OpenMoji for the Ichava Laravel icon ecosystem: 8,568 SVGs in two sets, OpenMoji colour and OpenMoji black.
 
 Requires [`ichava/core`](https://github.com/ichava/core) `^0.1` on PHP `^8.4.1 || ^8.5` and Laravel `^13`.
 

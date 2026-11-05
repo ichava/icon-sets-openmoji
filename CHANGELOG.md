@@ -4,6 +4,10 @@ All notable changes to `ichava/icon-sets-openmoji` follow [Keep a Changelog](htt
 
 ## [Unreleased]
 
+### Added
+
+- **1,436 SVGs, 718 per set, that the sync used to drop** (owner decision, 2026-11-04: add, not remove). Re-synced OpenMoji 15.1.0 on icon-sets-sync `00579ad`. 207 per set are emoji OpenMoji names without the emoji-presentation selector, now matched to their CLDR entry (the sun, the wastebasket and about 200 more), including `symbols/keycap-asterisk.svg` for `keycap: *`, which used to be lost to `keycap: #` (icon-sets-sync#91; `symbols/keycap.svg` is still `keycap: #`). 511 per set are OpenMoji extras and component glyphs the Unicode taxonomy does not name, kept as `<set>/uncategorised/<upstream-name>.svg`. Each set goes from 3,566 to 4,284 SVGs; `NoStrayTextNodesTest` is floored at 8,568. The other 3,566 changes per set are root attribute order and upstream's `color` kept, with no artwork change.
+
 ### Fixed
 
 - **`openmoji-color/travel-places/high-speed-train.svg` no longer carries a stray `d` text node** between `<g id="color">` and its first path. The defect is upstream's (OpenMoji 15.1.0 `1F684.svg` has it); the fix removes only that line. It rendered nothing but made the icon generator refuse the file. `NoStrayTextNodesTest` fails on any SVG in the pack with text directly under `<svg>` or `<g>`, floored at 7,132 files.
@@ -16,7 +20,7 @@ All notable changes to `ichava/icon-sets-openmoji` follow [Keep a Changelog](htt
 
 ### Changed
 
-- **The upstream sync runs icon-sets-sync `9fcf609`** (icon-sets-sync#88, icon-sets-sync#89, icon-sets-sync#90), up from `5d70f5d`. icon-sets-sync#90 categorises OpenMoji 15.1.0 against Unicode 16.0, as shipped, instead of 15.1 (which would move crab, lobster, oyster, shrimp and squid), keeps the fully-qualified white flag over its FE0F-less duplicate, and stops every real emoji sync from failing on Twemoji's licence. It also carries the `split-variants` and `exclude` transforms, the build-per-OS layout and the `licence_sha256` guard. The `uses:` pin and `toolkit-ref` move together; the reusable workflow's inputs did not change between the two commits, so the caller's `with:` block is untouched.
+- **The upstream sync runs icon-sets-sync `00579ad`** (icon-sets-sync#88, icon-sets-sync#89, icon-sets-sync#90, icon-sets-sync#91), up from `5d70f5d`. icon-sets-sync#91 gives `keycap: *` its own slug, `keycap-asterisk`. icon-sets-sync#90 categorises OpenMoji 15.1.0 against Unicode 16.0, as shipped, instead of 15.1 (which would move crab, lobster, oyster, shrimp and squid), keeps the fully-qualified white flag over its FE0F-less duplicate, and stops every real emoji sync from failing on Twemoji's licence. It also carries the `split-variants` and `exclude` transforms, the build-per-OS layout and the `licence_sha256` guard. The `uses:` pin and `toolkit-ref` move together; the reusable workflow's inputs did not change between the two commits, so the caller's `with:` block is untouched.
 - **`sync-upstream.yml` is a caller of icon-sets-sync's reusable `sync-pack.yml`**, pinned to a full commit SHA (icon-sets-sync#79). It builds the toolkit from source at that commit instead of `docker build` from `main`, grants `GITHUB_TOKEN` only `contents: read` and `issues: write` (the `contents`, `pull-requests` and `statuses: write` grants are gone: the Refresh Bot token does the writes), and opens an issue on an upstream licence change. The in-job Pest run and commit status are dropped; the sync pull request now starts the normal CI. `tests/Unit/SyncWorkflowCallerTest.php` pins the pin, the triggers and the permissions, and `symfony/yaml` joins `require-dev` for it.
 
 ### Security

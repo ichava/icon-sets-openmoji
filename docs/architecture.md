@@ -4,7 +4,7 @@
 
 ## What it ships
 
-7,132 SVGs, addressed by sets -- see [Sets](sets.md). Counted from
+8,568 SVGs, addressed by sets -- see [Sets](sets.md). Counted from
 the tracked files rather than quoted from prose:
 
 ```bash

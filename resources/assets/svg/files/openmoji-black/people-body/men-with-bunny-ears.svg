@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="emoji" viewBox="0 0 72 72">
+<svg id="emoji" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
   <g id="line">
     <circle cx="47.2855" cy="14.1802" r="3" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
     <polyline fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" points="44.317 13.086 41.317 5.086 43.317 5.086 47.317 11.086"/>

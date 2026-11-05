@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="emoji" viewBox="0 0 72 72">
+<svg id="emoji" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
   <g id="color">
     <circle cx="36" cy="36" r="23" fill="#FCEA2B"/>
     <polygon id="SVGID" fill="#EA5A47" points="38.254,51.023 41.277,49.677 42.446,48.234 42.764,46.624 39.065,46.669 29.097,46.669 30.411,49.677 33.57,51.023"/>

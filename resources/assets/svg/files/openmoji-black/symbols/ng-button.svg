@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="emoji" viewBox="0 0 72 72">
+<svg id="emoji" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
   <g id="line">
     <g id="NG_Button">
       <path fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2" d="M59.0349,59.3333h-46.07A.9679.9679,0,0,1,12,58.3682v-46.07a.9679.9679,0,0,1,.9651-.9651h46.07A.9679.9679,0,0,1,60,12.2984v46.07A.9679.9679,0,0,1,59.0349,59.3333Z"/>

@@ -2,9 +2,6 @@
 
 declare(strict_types=1);
 
-namespace Simtabi\Laranail\Ichava\IconSetsOpenmoji\Tests\Unit;
-
-use PHPUnit\Framework\TestCase;
 use Simtabi\Laranail\Ichava\IconSetsOpenmoji\Enums\Set;
 use Simtabi\Laranail\Ichava\IconSetsOpenmoji\Enums\Category;
 
@@ -20,95 +17,85 @@ use Simtabi\Laranail\Ichava\IconSetsOpenmoji\Enums\Category;
  * This pack is the only one with two taxonomies, so it is the only one that
  * has to hold both in step.
  */
-class ResourceShapeTest extends TestCase
-{
-    public function test_canonical_paths_exist(): void
-    {
-        foreach ([
-            'assets/svg/config.json',
-            'assets/svg/files',
-            'lang/en/icons.php',
-            'views/components',
-        ] as $path) {
-            $this->assertFileExists($this->resources() . '/' . $path);
-        }
+it('canonical paths exist', function (): void {
+    foreach ([
+        'assets/svg/config.json',
+        'assets/svg/files',
+        'lang/en/icons.php',
+        'views/components',
+    ] as $path) {
+        $this->assertFileExists(openmoji_resources() . '/' . $path);
     }
+});
 
-    public function test_translation_group_is_not_named_after_the_locale(): void
-    {
-        // lang/en/en.php produced `<namespace>::en.name`, locale doubled.
-        $this->assertFileDoesNotExist($this->resources() . '/lang/en/en.php');
+it('translation group is not named after the locale', function (): void {
+    // lang/en/en.php produced `<namespace>::en.name`, locale doubled.
+    $this->assertFileDoesNotExist(openmoji_resources() . '/lang/en/en.php');
+});
+
+it('english does not duplicate config json metadata', function (): void {
+    // config.json is canonical for name and description -- IconRegistry
+    // reads it. A copy here is exactly what drifted elsewhere.
+    $lang = openmoji_lang();
+
+    $this->assertArrayNotHasKey('name', $lang);
+    $this->assertArrayNotHasKey('description', $lang);
+});
+
+it('set keys match the set enum exactly', function (): void {
+    $expected = array_column(Set::cases(), 'value');
+    sort($expected);
+
+    foreach (['sets', 'set_descriptions'] as $group) {
+        $actual = array_keys(openmoji_lang()[$group]);
+        sort($actual);
+
+        $this->assertSame($expected, $actual, "lang/en/icons.php [{$group}] does not match the Set enum.");
     }
+});
 
-    public function test_english_does_not_duplicate_config_json_metadata(): void
-    {
-        // config.json is canonical for name and description -- IconRegistry
-        // reads it. A copy here is exactly what drifted elsewhere.
-        $lang = $this->lang();
+it('category keys match the category enum exactly', function (): void {
+    $expected = array_column(Category::cases(), 'value');
+    sort($expected);
 
-        $this->assertArrayNotHasKey('name', $lang);
-        $this->assertArrayNotHasKey('description', $lang);
-    }
+    foreach (['categories', 'category_descriptions'] as $group) {
+        $actual = array_keys(openmoji_lang()[$group]);
+        sort($actual);
 
-    public function test_set_keys_match_the_set_enum_exactly(): void
-    {
-        $expected = array_column(Set::cases(), 'value');
-        sort($expected);
-
-        foreach (['sets', 'set_descriptions'] as $group) {
-            $actual = array_keys($this->lang()[$group]);
-            sort($actual);
-
-            $this->assertSame($expected, $actual, "lang/en/icons.php [{$group}] does not match the Set enum.");
-        }
-    }
-
-    public function test_category_keys_match_the_category_enum_exactly(): void
-    {
-        $expected = array_column(Category::cases(), 'value');
-        sort($expected);
-
-        foreach (['categories', 'category_descriptions'] as $group) {
-            $actual = array_keys($this->lang()[$group]);
-            sort($actual);
-
-            $this->assertSame(
-                $expected,
-                $actual,
-                "lang/en/icons.php [{$group}] does not match the Category enum. "
-                . 'A mismatch here usually means the file was copied from another pack.',
-            );
-        }
-    }
-
-    public function test_every_set_has_a_directory_on_disk(): void
-    {
-        // The sets are also directories under files/. A lang key naming a set
-        // that does not ship is as wrong as one that does not exist.
-        foreach (Set::cases() as $set) {
-            $this->assertDirectoryExists($this->resources() . '/assets/svg/files/' . $set->value);
-        }
-    }
-
-    public function test_config_json_is_this_package(): void
-    {
-        $config = json_decode(
-            (string) file_get_contents($this->resources() . '/assets/svg/config.json'),
-            true,
-            flags: JSON_THROW_ON_ERROR,
+        $this->assertSame(
+            $expected,
+            $actual,
+            "lang/en/icons.php [{$group}] does not match the Category enum. "
+            . 'A mismatch here usually means the file was copied from another pack.',
         );
-
-        $this->assertSame('ichava/icon-sets-openmoji', $config['package']['name']);
     }
+});
 
-    private function resources(): string
-    {
-        return dirname(__DIR__, 2) . '/resources';
+it('every set has a directory on disk', function (): void {
+    // The sets are also directories under files/. A lang key naming a set
+    // that does not ship is as wrong as one that does not exist.
+    foreach (Set::cases() as $set) {
+        $this->assertDirectoryExists(openmoji_resources() . '/assets/svg/files/' . $set->value);
     }
+});
 
-    /** @return array<string, mixed> */
-    private function lang(): array
-    {
-        return require $this->resources() . '/lang/en/icons.php';
-    }
+it('config json is this package', function (): void {
+    $config = json_decode(
+        (string) file_get_contents(openmoji_resources() . '/assets/svg/config.json'),
+        true,
+        flags: JSON_THROW_ON_ERROR,
+    );
+
+    $this->assertSame('ichava/icon-sets-openmoji', $config['package']['name']);
+});
+
+function openmoji_resources(): string
+{
+    return dirname(__DIR__, 2) . '/resources';
+}
+
+/** @return array<string, mixed> */
+function openmoji_lang(): array
+{
+    return require openmoji_resources() . '/lang/en/icons.php';
 }

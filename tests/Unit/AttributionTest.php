@@ -51,12 +51,15 @@ it(description: 'carries the upstream notice and licence verbatim', closure: fun
 });
 
 it(description: 'ships the CC-BY-SA 4.0 licence text beside the artwork', closure: function () {
-    $path = attribution_root() . '/resources/assets/svg/licenses/openmoji/LICENSE';
-    expect(is_file($path))->toBeTrue();
+    // Upstream's own LICENSE.txt, written by the sync's licence sink. The hand-placed
+    // LICENSE it replaced must not come back beside it.
+    $path = attribution_root() . '/resources/assets/svg/licenses/openmoji/LICENSE.txt';
+    expect(is_file($path))->toBeTrue()
+        ->and(is_file(attribution_root() . '/resources/assets/svg/licenses/openmoji/LICENSE'))->toBeFalse();
     $text = (string) file_get_contents($path);
     $this->assertStringStartsWith('Attribution-ShareAlike 4.0 International', $text);
     $this->assertStringContainsString('Section 3 -- License Conditions.', $text);
-    $this->assertStringContainsString('resources/assets/svg/licenses/openmoji/LICENSE', (string) file_get_contents(attribution_root() . '/ATTRIBUTION.md'));
+    $this->assertStringContainsString('resources/assets/svg/licenses/openmoji/LICENSE.txt', (string) file_get_contents(attribution_root() . '/ATTRIBUTION.md'));
 });
 
 it(description: 'keeps LICENSE to the package code, held by Simtabi LLC', closure: function () {
@@ -76,7 +79,7 @@ it(description: 'points the README licence section at ATTRIBUTION.md', closure: 
 it(description: 'ships both licence files and names both licences in the README', closure: function () {
     $root = attribution_root();
     expect(is_file($root . '/LICENSE'))->toBeTrue();
-    expect(is_file($root . '/resources/assets/svg/licenses/openmoji/LICENSE'))->toBeTrue();
+    expect(is_file($root . '/resources/assets/svg/licenses/openmoji/LICENSE.txt'))->toBeTrue();
 
     $readme = (string) file_get_contents($root . '/README.md');
     preg_match('/^## License\R(.*)\z/ms', $readme, $m);
@@ -84,5 +87,5 @@ it(description: 'ships both licence files and names both licences in the README'
 
     $this->assertStringContainsString('MIT', $section, 'README License section must name MIT (the package code)');
     $this->assertStringContainsString('CC-BY-SA 4.0', $section, 'README License section must name CC-BY-SA 4.0 (the artwork)');
-    $this->assertStringContainsString('resources/assets/svg/licenses/openmoji/LICENSE', $section);
+    $this->assertStringContainsString('resources/assets/svg/licenses/openmoji/LICENSE.txt', $section);
 });

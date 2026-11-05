@@ -2,9 +2,10 @@
 
 *Reference.*
 
-Emoji are grouped by the ten Unicode CLDR emoji groups rather than by anything this package invents.
-The `Category` enum in `src/Enums/Category.php` mirrors them exactly, and `Category::ordered()`
-returns them in the order a picker should display.
+Emoji are grouped by the ten Unicode CLDR emoji groups rather than by anything this package invents,
+plus one bucket for what those groups do not cover. The `Category` enum in `src/Enums/Category.php`
+mirrors them exactly, and `Category::ordered()` returns them in the order a picker should display,
+with `uncategorised` last.
 
 | Slug | Group |
 |---|---|
@@ -18,6 +19,7 @@ returns them in the order a picker should display.
 | `symbols` | Symbols |
 | `flags` | Flags |
 | `component` | Component |
+| `uncategorised` | Uncategorised |
 
 ## Why CLDR and not our own grouping
 
@@ -28,6 +30,10 @@ that a category never has to be renamed because our taxonomy disagreed with the 
 `component` is the odd one: skin-tone and hair-colour modifiers, which are not standalone emoji.
 Most pickers hide it. It is present because the standard has it, not because it is useful on its
 own.
+
+`uncategorised` is not a CLDR group. It holds the icons the sync keeps rather than drops: OpenMoji's
+own extras and the component glyphs Unicode's taxonomy does not name, 511 per set, each under its
+upstream file name (`uncategorised/e380.svg`).
 
 ## Categories and sets are orthogonal
 

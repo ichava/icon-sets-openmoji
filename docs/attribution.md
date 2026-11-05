@@ -10,7 +10,7 @@ Every SVG in this package is OpenMoji artwork, under CC-BY-SA 4.0.
 | `openmoji-black` | [OpenMoji](https://openmoji.org) | CC-BY-SA 4.0 | as above |
 
 The notice this package ships with is in [`ATTRIBUTION.md`](../ATTRIBUTION.md), and the licence text
-in `resources/assets/svg/licenses/openmoji/LICENSE`. Both travel with the assets.
+in `resources/assets/svg/licenses/openmoji/LICENSE.txt`. Both travel with the assets.
 
 ## What CC-BY-SA means for you
 

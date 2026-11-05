@@ -47,6 +47,7 @@ return [
         'objects'         => 'Objects',
         'symbols'         => 'Symbols',
         'flags'           => 'Flags',
+        'uncategorised'   => 'Uncategorised',
     ],
 
     'category_descriptions' => [
@@ -60,5 +61,6 @@ return [
         'objects'         => 'Everyday objects, tools and technology',
         'symbols'         => 'Signs, arrows, marks and abstract symbols',
         'flags'           => 'National, regional and thematic flags',
+        'uncategorised'   => 'OpenMoji extras and glyphs the Unicode taxonomy does not name',
     ],
 ];

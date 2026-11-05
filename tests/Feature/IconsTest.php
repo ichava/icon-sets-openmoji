@@ -52,7 +52,8 @@ class IconsTest extends TestCase
 
     public function test_category_enum_lists_unicode_cldr_groups(): void
     {
-        // The 10 canonical Unicode emoji groups, in CLDR display order.
+        // The 10 canonical Unicode emoji groups, in CLDR display order, then the
+        // uncategorised/ bucket the sync keeps OpenMoji's extras in.
         $ordered = array_map(fn (Category $c) => $c->value, Category::ordered());
 
         $this->assertSame(
@@ -67,9 +68,28 @@ class IconsTest extends TestCase
                 'objects',
                 'symbols',
                 'flags',
+                'uncategorised',
             ],
             $ordered,
         );
+    }
+
+    public function test_every_category_directory_on_disk_is_a_category_case(): void
+    {
+        $cases = array_column(Category::cases(), 'value');
+        $seen = 0;
+
+        foreach (Set::cases() as $set) {
+            $dirs = glob(dirname(__DIR__, 2) . '/resources/assets/svg/files/' . $set->value . '/*', GLOB_ONLYDIR) ?: [];
+            $this->assertNotEmpty($dirs, "{$set->value} has no category directories");
+
+            foreach ($dirs as $dir) {
+                $seen++;
+                $this->assertContains(basename($dir), $cases, basename($dir) . ' is a directory with no Category case');
+            }
+        }
+
+        $this->assertGreaterThanOrEqual(18, $seen);
     }
 
     public function test_category_labels_are_human_readable(): void

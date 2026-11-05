@@ -42,10 +42,10 @@ jobs:
     permissions:
       contents: read
       issues: write
-    uses: ichava/icon-sets-sync/.github/workflows/sync-pack.yml@00579adf8f2b967a465fc804f58f6cd20be15754 # main 2026-11-05
+    uses: ichava/icon-sets-sync/.github/workflows/sync-pack.yml@1c768701c24a29722e88cc0ae76442a418f4cc70 # main 2026-11-05
     with:
       pack: ${{ github.event.repository.name }}
-      toolkit-ref: 00579adf8f2b967a465fc804f58f6cd20be15754
+      toolkit-ref: 1c768701c24a29722e88cc0ae76442a418f4cc70
       refresh-app-client-id: ${{ vars.REFRESH_APP_CLIENT_ID }}
       force: ${{ inputs.force == true }}
     secrets:

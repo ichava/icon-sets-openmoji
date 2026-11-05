@@ -36,6 +36,8 @@ jobs:
         # (SiblingConstraintsTest). CI aliases the siblings' main into that line so
         # this repository is tested against what it will ship beside, and restores
         # composer.json after the install so tests read the committed constraints.
+        # Until the re-squash tags core again, no core tag carries
+        # Providers\IconPackServiceProvider, so this alias is what a pack needs to boot.
         run: composer require "ichava/core:dev-main as 0.1.99" --no-update --no-interaction
 
       - name: Install dependencies

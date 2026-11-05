@@ -11,6 +11,7 @@ All notable changes to `ichava/icon-sets-openmoji` follow [Keep a Changelog](htt
 
 ### Fixed
 
+- **The OpenMoji licence text is upstream's own `LICENSE.txt`** (owner decision, 2026-11-05). The sync's licence sink writes `resources/assets/svg/licenses/openmoji/LICENSE.txt` from the OpenMoji release; it replaces the hand-placed `licenses/openmoji/LICENSE`, whose text differed from upstream's only in line wrapping. `AttributionTest`, `ATTRIBUTION.md`, the README and `docs/attribution.md` name the new path, and the test fails if the old file comes back. It failed on the old layout before the replacement.
 - **`openmoji-color/travel-places/high-speed-train.svg` no longer carries a stray `d` text node** between `<g id="color">` and its first path. The defect is upstream's (OpenMoji 15.1.0 `1F684.svg` has it); the fix removes only that line. It rendered nothing but made the icon generator refuse the file. `NoStrayTextNodesTest` fails on any SVG in the pack with text directly under `<svg>` or `<g>`, floored at 7,132 files.
 
 ### Documentation

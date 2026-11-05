@@ -62,6 +62,7 @@ The full documentation lives in this repository, under `docs/`, and is indexed b
 - [Release](docs/release.md) — how a version is cut, and when the core floor moves
 - [Sets](docs/sets.md) — the two sets, their counts, and how to address them
 - [Categories](docs/categories.md) — the category tree
+- [Customisation](docs/customization.md) — size, colour and accessibility for these emoji
 - [Attribution](docs/attribution.md) — the CC-BY-SA terms and what they mean for you
 
 ### Shared across every pack

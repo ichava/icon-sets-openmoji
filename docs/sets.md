@@ -25,7 +25,7 @@ two places drifts.
 
 ## Where the sets came from
 
-Both sets moved here verbatim from `ichava/icon-sets-emoji`, which no longer ships them; see
+Both sets moved here verbatim from `ichava/icon-sets-twemoji`, which no longer ships them; see
 [Architecture](architecture.md).
 
 ---

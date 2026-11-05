@@ -34,9 +34,9 @@ fails if any of that changes.
 
 ## Where the sets came from
 
-The `openmoji-color` and `openmoji-black` sets moved here from `ichava/icon-sets-emoji` byte for
-byte, so every item path is unchanged. icon-sets-emoji no longer ships them, and an
-`ichava/icon-sets-emoji::openmoji-*` id does not resolve: the id is
+The `openmoji-color` and `openmoji-black` sets moved here from `ichava/icon-sets-twemoji` byte for
+byte, so every item path is unchanged. icon-sets-twemoji no longer ships them, and an
+`ichava/icon-sets-twemoji::openmoji-*` id does not resolve: the id is
 `ichava/icon-sets-openmoji::openmoji-color/...`.
 
 Why a pack of its own: OpenMoji is CC-BY-SA 4.0. Keeping it apart means only an application that

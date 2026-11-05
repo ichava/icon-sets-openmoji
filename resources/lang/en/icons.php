@@ -14,7 +14,7 @@ declare(strict_types=1);
 | while nothing was reading it. A non-English locale may add them to
 | override; `en` must not.
 |
-| Like ichava/icon-sets-emoji, which it came from, this pack has two
+| Like ichava/icon-sets-twemoji, which it came from, this pack has two
 | taxonomies, so it has both `sets` and `categories`:
 |
 |   sets       -> Simtabi\Laranail\Ichava\IconSetsOpenmoji\Enums\Set

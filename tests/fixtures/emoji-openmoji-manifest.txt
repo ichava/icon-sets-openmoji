@@ -1,5 +1,5 @@
-# Every SVG icon-sets-emoji shipped under openmoji-color/ and openmoji-black/ before
-# they were removed there, at ichava/icon-sets-emoji 23124aab63ef30d3f7bbc0be5c7de4b2b824bd03.
+# Every SVG icon-sets-twemoji shipped under openmoji-color/ and openmoji-black/ before
+# they were removed there, at ichava/icon-sets-twemoji 23124aab63ef30d3f7bbc0be5c7de4b2b824bd03.
 # <set>/<item path>.svg <first 16 hex of sha256>
 openmoji-black/activities/1st-place-medal.svg 07993d2fb2e5de55
 openmoji-black/activities/2nd-place-medal.svg 355d35aad8ac2979

@@ -56,3 +56,14 @@ it(description: 'points metadata.homepage at OpenMoji, not at this package', clo
     expect($config['metadata']['homepage'])->toBe('https://openmoji.org/')
         ->and($config['metadata']['homepage'])->not->toBe($config['metadata']['repository']);
 });
+
+it(description: 'declares no package.replaces: the old icon-sets-emoji ids are not aliased', closure: function () {
+    $config = json_decode(
+        (string) file_get_contents(dirname(__DIR__, 2) . '/resources/assets/svg/config.json'),
+        true,
+        flags: JSON_THROW_ON_ERROR,
+    );
+
+    expect($config['package'])->toHaveKey('name')
+        ->and($config['package'])->not->toHaveKey('replaces');
+});

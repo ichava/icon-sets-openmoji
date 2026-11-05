@@ -20,16 +20,6 @@ The component is core's and is generic: the pack is named in the path, not in th
 Both spellings of the path resolve to the same icon -- slash and dot are normalised by one
 resolver, documented in core's [icon path format](https://github.com/ichava/core/blob/main/docs/tools/icon-path-format.md).
 
-## Coming from icon-sets-emoji
-
-Ids you already use, such as `ichava/icon-sets-emoji::openmoji-color/smileys-emotion/grinning-face`,
-keep working: with this pack installed they resolve here, and each is logged once as a use of the older id. The emoji pack's copies stay supported in v0.1.0, and this pack is the one to install for new work.
-Rewrite them to `ichava/icon-sets-openmoji::...` at your own pace; doctor lists where they are:
-
-```bash
-php artisan ichava::ichava-core.info doctor
-```
-
 ## If nothing renders
 
 Almost always the seed has not run. Check with:

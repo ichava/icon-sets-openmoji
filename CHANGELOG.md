@@ -9,6 +9,10 @@ All notable changes to `ichava/icon-sets-openmoji` follow [Keep a Changelog](htt
 - **`Category::UNCATEGORISED` (`uncategorised`, label "Uncategorised")** for the `<set>/uncategorised/` directory, where the sync keeps the 511 OpenMoji extras and component glyphs per set that Unicode's taxonomy does not name. It comes last in `Category::ordered()`, after the ten CLDR groups, and `lang/en/icons.php` and `docs/categories.md` list it. A new test fails if any category directory on disk has no `Category` case; it failed on `uncategorised` before the case existed.
 - **1,436 SVGs, 718 per set, that the sync used to drop** (owner decision, 2026-11-04: add, not remove). Re-synced OpenMoji 15.1.0 on icon-sets-sync `00579ad`. 207 per set are emoji OpenMoji names without the emoji-presentation selector, now matched to their CLDR entry (the sun, the wastebasket and about 200 more), including `symbols/keycap-asterisk.svg` for `keycap: *`, which used to be lost to `keycap: #` (icon-sets-sync#91; `symbols/keycap.svg` is still `keycap: #`). 511 per set are OpenMoji extras and component glyphs the Unicode taxonomy does not name, kept as `<set>/uncategorised/<upstream-name>.svg`. Each set goes from 3,566 to 4,284 SVGs; `NoStrayTextNodesTest` is floored at 8,568. The other 3,566 changes per set are root attribute order and upstream's `color` kept, with no artwork change.
 
+### Removed
+
+- **`package.replaces` and the old icon-sets-emoji ids** (owner, 2026-11-05: forward-only). icon-sets-emoji no longer ships the OpenMoji sets and ichava/core no longer aliases moved sets, so `ichava/icon-sets-emoji::openmoji-*` ids do not resolve; use `ichava/icon-sets-openmoji::openmoji-color/...`. `ReplacesEmojiTest`, its `EmojiPack`, `OldIdUse` and `CleanHost` fixtures, and the README and docs passages on moving off the old ids are gone.
+
 ### Fixed
 
 - **The Cornwall flag no longer carries an unused `xmlns:sodipodi` declaration**, in `openmoji-color` and `openmoji-black` (`uncategorised/1f3f4-e0063-e0061-e0071-e0063-e007f.svg`). icon-sets-sync now drops a namespace declaration nothing uses (icon-sets-sync#92), and the sync runs `1c76870`, up from `00579ad`. The re-sync changed those 2 files and nothing else. js-icon-components' generator refused the declaration, so it had excluded both.
@@ -17,7 +21,6 @@ All notable changes to `ichava/icon-sets-openmoji` follow [Keep a Changelog](htt
 
 ### Documentation
 
-- **This pack is stated plainly as the one to install for new work** (preferred since 0.1.0), and icon-sets-emoji's copies of the OpenMoji sets as supported in v0.1.0, with no removal date. The older "deprecated since 0.2.0" wording is gone (0.2.0 will not exist). `tests/Feature/ReplacesEmojiTest.php` asserts the wording and both resolution paths.
 - **`docs/release.md` names the sync recipe that now exists** (`openmoji-sets`, icon-sets-sync#78) instead of saying the weekly sync has nothing to run.
 - **The licence split is stated in the README "License" section and in `ATTRIBUTION.md`** (Q17): the root `LICENSE` is MIT and covers the package code, and the OpenMoji artwork stays CC-BY-SA 4.0 at `resources/assets/svg/licenses/openmoji/LICENSE`. `AttributionTest` now asserts both licence files exist and the README names both licences.
 
@@ -38,6 +41,5 @@ First release of `ichava/icon-sets-openmoji` (owner decision D9, 2026-11-04).
 ### Added
 
 - **The OpenMoji sets, moved from `ichava/icon-sets-emoji`.** `openmoji-color` and `openmoji-black`, 3,566 SVGs each, copied byte for byte under the same item paths, grouped by Unicode CLDR category.
-- **`package.replaces` in `config.json`** declares the move, so with this pack installed ichava/core resolves `ichava/icon-sets-emoji::openmoji-color/...` and `openmoji-black/...` ids here, stops seeding icon-sets-emoji's copies, and logs each rewritten id once as a deprecation. Without this pack the old ids keep resolving in icon-sets-emoji.
 - **Licensing kept apart from the MIT packs.** `LICENSE` is the MIT licence for the package code; the artwork is CC-BY-SA 4.0, with its text in `resources/assets/svg/licenses/openmoji/LICENSE` and the notice and credit line in `ATTRIBUTION.md`. The pack is not part of `ichava/icon-sets-bundled`.
-- **Tests:** the pack's ids resolve; with an icon-sets-emoji registered beside it, the old ids resolve here and doctor reports a planted use of one; the sibling, attribution, docs-shape, personal-contact, PHPStan-level and release-version guards the other packs carry.
+- **Tests:** the pack's ids resolve; the sibling, attribution, docs-shape, personal-contact, PHPStan-level and release-version guards the other packs carry.

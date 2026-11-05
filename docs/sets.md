@@ -25,9 +25,7 @@ two places drifts.
 
 ## Where the sets came from
 
-Both sets moved here verbatim from `ichava/icon-sets-emoji`. This pack is the one to install for new
-work (preferred since 0.1.0); icon-sets-emoji keeps shipping its copies, supported in v0.1.0. The old
-ids alias to this pack while it is installed; see
+Both sets moved here verbatim from `ichava/icon-sets-emoji`, which no longer ships them; see
 [Architecture](architecture.md).
 
 ---

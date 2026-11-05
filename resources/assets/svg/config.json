@@ -78,9 +78,9 @@
       "openmoji_black_jsdelivr": "https://cdn.jsdelivr.net/gh/hfg-gmuend/openmoji@{version}/black/svg/{codepoint}.svg"
     },
     "update_command": {
-      "_note": "icon-sets-sync has no recipe for this pack yet: its `emoji-sets` recipe still refreshes OpenMoji inside ichava/icon-sets-emoji. Until a recipe is split out, the weekly sync-upstream run here has nothing to run.",
+      "_note": "Refreshed by ichava/icon-sets-sync from config/icon-sets-openmoji.json, through its `openmoji-sets` recipe: both sets from one pinned hfg-gmuend/openmoji release tag, categorised by the Unicode taxonomy, with the guards that keep every icon. The weekly sync-upstream run here calls it. ichava/icon-sets-emoji no longer carries OpenMoji, so this pack is its only home.",
       "type": "recipe",
-      "recipe": "openmoji"
+      "recipe": "openmoji-sets"
     },
     "_vendored_note": "The files were moved verbatim from ichava/icon-sets-emoji, where they were produced from OpenMoji 15.1.0 and categorised with Unicode emoji 16.0 (emoji-test.txt).",
     "cldr_version": "16.0"

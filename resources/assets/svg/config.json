@@ -14,17 +14,7 @@
     "upstream_version": "15.1.0",
     "type": "bulk",
     "kind": "icon",
-    "license": "MIT (code) / CC-BY-SA 4.0 (OpenMoji assets)",
-    "replaces": [
-      {
-        "package": "ichava/icon-sets-emoji",
-        "paths": [
-          "openmoji-color/**",
-          "openmoji-black/**"
-        ],
-        "since": "0.1.0"
-      }
-    ]
+    "license": "MIT (code) / CC-BY-SA 4.0 (OpenMoji assets)"
   },
   "metadata": {
     "authors": [
@@ -92,7 +82,7 @@
       "type": "recipe",
       "recipe": "openmoji"
     },
-    "_vendored_note": "The files were moved verbatim from ichava/icon-sets-emoji, where they were produced from OpenMoji 15.1.0 and categorised with Unicode emoji 16.0 (emoji-test.txt). Item paths are unchanged, so `ichava/icon-sets-emoji::openmoji-color/...` ids alias to this pack (package.replaces).",
+    "_vendored_note": "The files were moved verbatim from ichava/icon-sets-emoji, where they were produced from OpenMoji 15.1.0 and categorised with Unicode emoji 16.0 (emoji-test.txt).",
     "cldr_version": "16.0"
   }
 }

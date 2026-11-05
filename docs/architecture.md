@@ -32,20 +32,12 @@ the `laranail/*` packages reach this pack only through core. The composer `type`
 `ichava-icon-set`, which is how core's pack discovery finds it. `tests/Unit/CoreOnlyDependencyTest.php`
 fails if any of that changes.
 
-## It took over two sets from icon-sets-emoji
+## Where the sets came from
 
 The `openmoji-color` and `openmoji-black` sets moved here from `ichava/icon-sets-emoji` byte for
-byte, so every item path is unchanged. `config.json` declares the move:
-
-```json
-"replaces": [ { "package": "ichava/icon-sets-emoji", "paths": ["openmoji-color/**", "openmoji-black/**"], "since": "0.1.0" } ]
-```
-
-Core reads it at registration. With this pack installed, an old
-`ichava/icon-sets-emoji::openmoji-color/...` id resolves here, icon-sets-emoji's copies of those
-sets are not seeded, and each rewritten id is logged once per process as a deprecation. Doctor's
-`alias.deprecated_ids` check lists the places a host still uses an old id. Without this pack the old
-ids resolve in icon-sets-emoji, as before.
+byte, so every item path is unchanged. icon-sets-emoji no longer ships them, and an
+`ichava/icon-sets-emoji::openmoji-*` id does not resolve: the id is
+`ichava/icon-sets-openmoji::openmoji-color/...`.
 
 Why a pack of its own: OpenMoji is CC-BY-SA 4.0. Keeping it apart means only an application that
 installs this pack takes on the share-alike and attribution terms, and it keeps the pack out of

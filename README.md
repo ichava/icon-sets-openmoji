@@ -33,8 +33,6 @@ php artisan ichava::ichava-core.database seed --package=ichava/icon-sets-openmoj
 
 The seed is not optional: until it runs the registry holds no rows for this pack and every lookup returns nothing. No configuration is needed; the defaults are merged without publishing anything.
 
-Coming from `ichava/icon-sets-emoji`: these sets moved here from it, and this is the pack to install for new work (preferred since 0.1.0). The emoji pack's copies stay supported in v0.1.0. With this pack installed, the old `ichava/icon-sets-emoji::openmoji-*` ids resolve here and are logged as deprecated; `php artisan ichava::ichava-core.info doctor` lists where you still use them.
-
 ### Usage
 
 Icons are addressed as `ichava/icon-sets-openmoji::<set>/<category>/<name>`. In Blade, through core's component:
@@ -58,9 +56,9 @@ The full documentation lives in this repository, under `docs/`, and is indexed b
 ### This pack
 
 - [Installation](docs/installation.md) — requirements, the repositories block, seeding
-- [Getting started](docs/getting-started.md) — your first icon from this pack, and moving off the old ids
+- [Getting started](docs/getting-started.md) — your first icon from this pack
 - [Configuration](docs/configuration.md) — this pack's config key, and what is core's instead
-- [Architecture](docs/architecture.md) — what it ships, the move from icon-sets-emoji, and why
+- [Architecture](docs/architecture.md) — what it ships, where the sets came from, and why
 - [Release](docs/release.md) — how a version is cut, and when the core floor moves
 - [Sets](docs/sets.md) — the two sets, their counts, and how to address them
 - [Categories](docs/categories.md) — the category tree

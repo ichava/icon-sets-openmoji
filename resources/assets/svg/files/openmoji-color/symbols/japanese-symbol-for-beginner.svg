@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="emoji" viewBox="0 0 72 72">
+<svg id="emoji" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
   <g id="color">
     <polygon fill="#fcea2b" points="17 12.007 16 48.007 35 64.007 35 24.007 17 12.007"/>
     <polygon fill="#5c9e31" points="55 12.007 56 48.007 37 64.007 37 24.007 55 12.007"/>

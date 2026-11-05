@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="emoji" viewBox="0 0 72 72">
+<svg id="emoji" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
   <g id="line">
     <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m37.01 21.82c-1.343-7.331-6.229-22.43-22.85-7.574"/>
     <path fill="none" stroke="#000" stroke-miterlimit="10" d="m54.34 32.9a6.679 6.672 0 1 0-8.112-10.32"/>

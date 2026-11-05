@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="emoji" viewBox="0 0 72 72">
+<svg id="emoji" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
   <g id="color">
     <rect x="5" y="17" width="62" height="38" fill="#92d3f5"/>
     <polygon fill="#f1b31c" stroke="#f1b31c" stroke-linecap="round" stroke-linejoin="round" points="58.707 25 60.035 21 61.18 24.939 58 22.565 62 22.467 58.707 25"/>

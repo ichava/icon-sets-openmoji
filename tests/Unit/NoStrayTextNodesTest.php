@@ -57,8 +57,10 @@ function pack_svg_files(string $root): array
 it('has no text node directly under svg or g in any icon', function (): void {
     $files = pack_svg_files(dirname(__DIR__, 2) . '/resources/assets/svg/files');
 
-    // 3,566 icons per set, two sets. A glob that stops matching must fail, not pass.
-    expect(count($files))->toBeGreaterThanOrEqual(7132);
+    // 4,284 icons per set, two sets: 3,773 categorised (keycap: * as keycap-asterisk since
+    // icon-sets-sync#91) and 511 OpenMoji extras in uncategorised/. A glob that stops matching
+    // must fail, not pass.
+    expect(count($files))->toBeGreaterThanOrEqual(8568);
 
     $offenders = [];
     foreach ($files as $file) {

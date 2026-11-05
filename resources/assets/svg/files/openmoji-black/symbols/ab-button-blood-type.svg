@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="emoji" viewBox="0 0 72 72">
+<svg id="emoji" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
   <g id="line-supplement">
     <g id="AB_Button">
       <path fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2" d="M59.0349,60.1373h-46.07A.9679.9679,0,0,1,12,59.1722v-46.07a.9679.9679,0,0,1,.9651-.9651h46.07A.9679.9679,0,0,1,60,13.1024v46.07A.9679.9679,0,0,1,59.0349,60.1373Z"/>

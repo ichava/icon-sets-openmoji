@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="emoji" viewBox="0 0 72 72">
+<svg id="emoji" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
   <g id="color">
     <ellipse cx="48.0785" cy="28.9296" rx="3.7516" ry="2.0573" transform="translate(1.7146 60.5343) rotate(-65.3169)" fill="#fff"/>
     <ellipse cx="35.4119" cy="34.3351" rx="3.7516" ry="2.0573" transform="translate(-3.9632 64.0422) rotate(-81.1487)" fill="#fff"/>

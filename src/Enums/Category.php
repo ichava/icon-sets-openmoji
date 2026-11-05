@@ -7,10 +7,15 @@ namespace Simtabi\Laranail\Ichava\IconSetsOpenmoji\Enums;
 /**
  * Unicode CLDR emoji groups.
  *
- * These 10 cases mirror the canonical groupings used by every major
+ * The first 10 cases mirror the canonical groupings used by every major
  * emoji picker. Inside each ``Set`` directory under
  * ``resources/assets/svg/files/<set>/``, emojis are filed into a
  * subdirectory whose name matches one of these slugs.
+ *
+ * ``UNCATEGORISED`` is the 11th: the ``uncategorised/`` directory where
+ * the sync keeps the OpenMoji extras and component glyphs that Unicode's
+ * taxonomy does not name, under their upstream file names. It is not a
+ * CLDR group, so it comes last in ``ordered()``.
  *
  * This is a plain backed enum -- the engine's variant/category contract
  * is fulfilled by the ``Set`` enum. ``Category`` is exposed purely so
@@ -29,6 +34,7 @@ enum Category: string
     case OBJECTS = 'objects';
     case SYMBOLS = 'symbols';
     case FLAGS = 'flags';
+    case UNCATEGORISED = 'uncategorised';
 
     /**
      * All categories in their canonical Unicode display order.
@@ -48,6 +54,7 @@ enum Category: string
             self::OBJECTS,
             self::SYMBOLS,
             self::FLAGS,
+            self::UNCATEGORISED,
         ];
     }
 
@@ -67,6 +74,7 @@ enum Category: string
             self::OBJECTS         => 'Objects',
             self::SYMBOLS         => 'Symbols',
             self::FLAGS           => 'Flags',
+            self::UNCATEGORISED   => 'Uncategorised',
         };
     }
 }

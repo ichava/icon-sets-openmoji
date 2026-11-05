@@ -2,7 +2,7 @@
 
 Contribution guidelines are centralized for the whole Ichava org:
 
-- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Code of Conduct](https://github.com/ichava/.github/blob/main/CODE_OF_CONDUCT.md)
 
 For this pack specifically: icon assets are refreshed from upstream by the
 [icon-sets-sync](https://github.com/ichava/icon-sets-sync/blob/main/docs/maintainer-sync.md).

@@ -10,7 +10,7 @@
 #
 # A human reviews the PR diff and merges. release-please then opens the
 # release PR, and its tag starts release.yml, which publishes the GitHub
-# release. Packagist reads the tag and lists the new version.
+# release. Nothing is published to Packagist; installs come from the tags.
 #
 # The pin is a full commit SHA of icon-sets-sync, and `toolkit-ref` must be
 # the same commit. Dependabot (github-actions) advances the `uses:` pin;

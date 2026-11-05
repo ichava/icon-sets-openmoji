@@ -9,10 +9,11 @@ Core is the engine; this pack is only icons and the provider that registers them
 
 ## The repositories block
 
-The `ichava/*` packages are on Packagist, but the `laranail/*` packages core depends on are not yet, so Composer has to be told where to find them.
-Composer reads `repositories` only from the root package, which is why the block belongs in the
-**application's** `composer.json` and has to name the whole transitive closure rather than just this
-pack. Core's [installation guide](https://github.com/ichava/core/blob/main/docs/installation.md) gives the full block.
+This pack requires `ichava/core` and nothing else; the `laranail/*` packages are core's dependencies,
+not this pack's. Nothing in the Ichava family is on Packagist yet, and Composer reads `repositories`
+only from the root package, so the **application's** `composer.json` names core, core's dependencies
+and this pack. Core's [installation guide](https://github.com/ichava/core/blob/main/docs/installation.md#1-point-composer-at-the-repositories) holds that block and is the one place that lists
+it; this pack's line is `https://github.com/ichava/icon-sets-openmoji`.
 
 ## Require it
 

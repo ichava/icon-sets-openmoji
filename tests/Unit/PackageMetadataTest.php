@@ -49,15 +49,15 @@ it(description: 'points metadata.homepage at OpenMoji, not at this package', clo
     );
 
     // Settled 2026-09-22 for the family. `metadata.homepage` is the UPSTREAM
-    // project's own site. icon-sets-emoji, which vendors two upstreams, omits
-    // it; this pack has exactly one upstream, so it names OpenMoji's site.
+    // project's own site. icon-sets-twemoji omits it and names Twemoji in
+    // `metadata.authors`; this pack names OpenMoji's site.
     // Pointing it at this package would duplicate `metadata.repository` in the
     // browser API, where `publicMetadata()` ships both side by side.
     expect($config['metadata']['homepage'])->toBe('https://openmoji.org/')
         ->and($config['metadata']['homepage'])->not->toBe($config['metadata']['repository']);
 });
 
-it(description: 'declares no package.replaces: the old icon-sets-emoji ids are not aliased', closure: function () {
+it(description: 'declares no package.replaces: openmoji-* ids under icon-sets-twemoji are not aliased', closure: function () {
     $config = json_decode(
         (string) file_get_contents(dirname(__DIR__, 2) . '/resources/assets/svg/config.json'),
         true,

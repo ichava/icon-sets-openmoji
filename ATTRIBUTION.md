@@ -11,7 +11,7 @@ The MIT licence in `LICENSE` covers ONLY the package code. Each emoji asset reta
 
 ## The licence split
 
-The root `LICENSE` is **MIT** and covers the package code only. The OpenMoji artwork stays **CC-BY-SA 4.0**, with its text at `resources/assets/svg/licenses/openmoji/LICENSE.txt`; the same split is used by `icon-sets-tabler` and `icon-sets-emoji`.
+The root `LICENSE` is **MIT** and covers the package code only. The OpenMoji artwork stays **CC-BY-SA 4.0**, with its text at `resources/assets/svg/licenses/openmoji/LICENSE.txt`; the same split is used by `icon-sets-tabler` and `icon-sets-twemoji`.
 
 ## OpenMoji Color + OpenMoji Black
 
@@ -39,14 +39,14 @@ Credit line, upstream's own suggestion:
 ## Changes
 
 Creative Commons licences ask you to indicate changes. Measured 2026-10-26
-in `ichava/icon-sets-emoji` by comparing files against upstream by codepoint:
+in `ichava/icon-sets-twemoji` by comparing files against upstream by codepoint:
 
 - The files are reformatted, not redrawn. `1st-place-medal.svg` differs from
   upstream `1F947.svg` at 15.1.0 in attribute order and whitespace only
   (2,888 bytes against 2,889).
 - They are renamed and grouped by Unicode CLDR name and category instead of
   codepoint.
-- On 2026-11-04 they moved from `ichava/icon-sets-emoji` to this package
+- On 2026-11-04 they moved from `ichava/icon-sets-twemoji` to this package
   byte for byte, under the same paths.
 
 When `ichava/core` renders an icon it also sanitises the SVG (it drops

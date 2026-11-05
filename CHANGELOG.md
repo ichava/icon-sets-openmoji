@@ -25,6 +25,7 @@ All notable changes to `ichava/icon-sets-openmoji` follow [Keep a Changelog](htt
 
 ### Documentation
 
+- **The pack OpenMoji came from is named `ichava/icon-sets-twemoji`.** That pack ships Twemoji only and was renamed, forward only, so `config.json`'s description and notes, ATTRIBUTION, the architecture, attribution and sets docs, the lang and provider docblocks, `EmojiOpenmojiSupersetTest` and its manifest header, and `PackageMetadataTest` name it by its new name. The fact stays: these sets moved here byte for byte from that repository on 2026-11-04, and the manifest's commit `23124aa` is in it. No artwork or behaviour changes.
 - **`config.json`'s `update_command` names the recipe that refreshes this pack.** Its note said icon-sets-sync had no recipe here and that `emoji-sets` refreshed OpenMoji inside icon-sets-emoji; the `openmoji-sets` recipe has synced this pack since icon-sets-sync#78, and icon-sets-emoji no longer carries OpenMoji. `recipe` is now `openmoji-sets`, the name icon-sets-sync uses, instead of `openmoji`. Metadata only; no SVG changed.
 - **`docs/release.md` names the sync recipe that now exists** (`openmoji-sets`, icon-sets-sync#78) instead of saying the weekly sync has nothing to run.
 - **The licence split is stated in the README "License" section and in `ATTRIBUTION.md`** (Q17): the root `LICENSE` is MIT and covers the package code, and the OpenMoji artwork stays CC-BY-SA 4.0 at `resources/assets/svg/licenses/openmoji/LICENSE`. `AttributionTest` now asserts both licence files exist and the README names both licences.

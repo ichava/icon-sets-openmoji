@@ -20,7 +20,7 @@ distribute the result, that result has to be CC-BY-SA too. Recolouring `openmoji
 derivative, but editing the artwork and shipping it is.
 
 If that is awkward for your project, use the `twemoji` set in
-[`ichava/icon-sets-emoji`](https://github.com/ichava/icon-sets-emoji), which is CC-BY and asks only
+[`ichava/icon-sets-twemoji`](https://github.com/ichava/icon-sets-twemoji), which is CC-BY and asks only
 for credit. This is why OpenMoji has a pack of its own: an application takes on these terms only by
 installing it.
 

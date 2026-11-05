@@ -11,7 +11,7 @@ use Simtabi\Laranail\Ichava\IconSetsOpenmoji\View\Components\IconComponent;
 /**
  * Registers the OpenMoji sets with the Ichava registry.
  *
- * Ships two emoji sets, moved verbatim from ichava/icon-sets-emoji:
+ * Ships two emoji sets, moved verbatim from ichava/icon-sets-twemoji:
  *
  *   - openmoji-color (community-driven flat colourful, CC-BY-SA 4.0)
  *   - openmoji-black (monochrome variant, CC-BY-SA 4.0)

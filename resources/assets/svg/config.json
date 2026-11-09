@@ -11,7 +11,7 @@
       "unicode"
     ],
     "version": "0.1.0",
-    "upstream_version": "15.1.0",
+    "upstream_version": "17.0.0",
     "type": "bulk",
     "kind": "icon",
     "license": "MIT (code) / CC-BY-SA 4.0 (OpenMoji assets)"
@@ -70,7 +70,7 @@
       "owner": "hfg-gmuend",
       "repo": "openmoji"
     },
-    "current_version": "15.1.0",
+    "current_version": "17.0.0",
     "version_check_url": "https://api.github.com/repos/hfg-gmuend/openmoji/releases/latest",
     "license": "CC-BY-SA 4.0",
     "cdn": {

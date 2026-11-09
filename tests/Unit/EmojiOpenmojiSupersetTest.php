@@ -18,7 +18,23 @@ declare(strict_types=1);
 | Every entry must exist here at the same set and item path, byte for byte.
 | A file that moved category would fail the path check and show up by name.
 |
+| That promise is about OpenMoji 15.1.0, the release the copies came from and
+| the one this pack shipped them in. A newer upstream release renames and
+| redraws icons on purpose; the sync reviews those changes icon by icon
+| ("needs review", then --force; owner, 2026-11-09). So the byte-for-byte
+| check runs while the pack is on 15.1.0, and past it the test asserts the
+| pack really moved forward, so a re-packaged 15.1.0 is still held to it.
+|
 */
+
+const OPENMOJI_MANIFEST_RELEASE = '15.1.0';
+
+function openmoji_upstream_version(): string
+{
+    $config = json_decode((string) file_get_contents(dirname(__DIR__, 2) . '/resources/assets/svg/config.json'), true);
+
+    return (string) ($config['package']['upstream_version'] ?? '');
+}
 
 function openmoji_files_root(): string
 {
@@ -31,6 +47,14 @@ it(description: 'holds every OpenMoji SVG icon-sets-twemoji shipped, at the same
 
     // 3,567 per set. A manifest that stopped matching would otherwise pass.
     expect($entries)->toHaveCount(7134);
+
+    $upstream = openmoji_upstream_version();
+    if ($upstream !== OPENMOJI_MANIFEST_RELEASE) {
+        expect(version_compare($upstream, OPENMOJI_MANIFEST_RELEASE, '>'))
+            ->toBeTrue("upstream_version {$upstream} is neither the manifest's release nor newer than it");
+
+        return;
+    }
 
     $missing = [];
     $changed = [];

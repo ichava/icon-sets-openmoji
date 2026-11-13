@@ -1,0 +1,101 @@
+{
+    "name": "ichava/icon-sets-openmoji",
+    "description": "8,568 OpenMoji emoji SVGs (colour and black), grouped by CLDR category, for Laravel 13 on the Ichava icon ecosystem. Artwork CC-BY-SA 4.0.",
+    "type": "ichava-icon-set",
+    "keywords": [
+        "laravel",
+        "blade",
+        "emoji",
+        "emojis",
+        "svg",
+        "openmoji",
+        "unicode",
+        "ichava"
+    ],
+    "homepage": "https://github.com/ichava/icon-sets-openmoji",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Simtabi LLC",
+            "email": "ichava@simtabi.com",
+            "homepage": "https://simtabi.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.4.1 || ^8.5",
+        "ichava/core": "^0.1"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/ichava/core"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/laranail/package-tools.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/laranail/console.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/laranail/enumerator.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/laranail/db-tools.git"
+        }
+    ],
+    "require-dev": {
+        "composer/semver": "^3.4",
+        "laravel/pint": "^1.18",
+        "orchestra/testbench": "^11.0",
+        "pestphp/pest": "^4.6 || ^5.0",
+        "phpstan/phpstan": "^2.1",
+        "symfony/yaml": "^7.0 || ^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Simtabi\\Laranail\\Ichava\\IconSetsOpenmoji\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Simtabi\\Laranail\\Ichava\\IconSetsOpenmoji\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Simtabi\\Laranail\\Ichava\\IconSetsOpenmoji\\Providers\\IconsServiceProvider"
+            ]
+        },
+        "branch-alias": {
+            "dev-main": "0.1.x-dev"
+        }
+    },
+    "scripts": {
+        "pint": "@php vendor/bin/laranail-pint --test",
+        "pint-fix": "@php vendor/bin/laranail-pint --parallel",
+        "lint": "@pint",
+        "format": "@pint-fix",
+        "test": "vendor/bin/pest --parallel",
+        "analyse": "vendor/bin/phpstan analyse --memory-limit=2G"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "support": {
+        "source": "https://github.com/ichava/icon-sets-openmoji",
+        "issues": "https://github.com/ichava/icon-sets-openmoji/issues",
+        "security": "https://github.com/ichava/icon-sets-openmoji/security/policy",
+        "docs": "https://github.com/ichava/icon-sets-openmoji/tree/main/docs"
+    }
+}

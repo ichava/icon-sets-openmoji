@@ -40,7 +40,7 @@ All notable changes to `ichava/icon-sets-openmoji` follow [Keep a Changelog](htt
 
 - **Every workflow declares a top-level `permissions: contents: read`** (S9), so its token no longer depends on the organisation's default. None of these jobs writes. `tests/Unit/WorkflowPermissionsTest.php` fails if a workflow loses the block.
 
-## [0.1.0] - TBD
+## [0.1.0] - 2026-11-13
 
 First release of `ichava/icon-sets-openmoji` (owner decision D9, 2026-11-04).
 
